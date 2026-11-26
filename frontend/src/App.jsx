@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter,
   Link,
@@ -6,14 +7,20 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom'
+
 import AvailableBikes from './pages/AvailableBikes.jsx'
 import CustomerDashboard from './pages/CustomerDashboard.jsx'
 import CustomerLogin from './pages/CustomerLogin.jsx'
+import CustomerRegister from './pages/CustomerRegister.jsx'
 import MyBookings from './pages/MyBookings.jsx'
 
 function AppContent() {
   const { pathname } = useLocation()
-  const isLoginPage = pathname === '/' || pathname === '/login'
+
+  const isLoginPage =
+    pathname === '/' ||
+    pathname === '/login' ||
+    pathname === '/register'
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -29,12 +36,15 @@ function AppContent() {
             <Link to="/dashboard" className="text-gray-700 hover:text-blue-700">
               Dashboard
             </Link>
+
             <Link to="/bikes" className="text-gray-700 hover:text-blue-700">
               Available Bikes
             </Link>
+
             <Link to="/bookings" className="text-gray-700 hover:text-blue-700">
               My Bookings
             </Link>
+
             <Link to="/login" className="text-gray-700 hover:text-blue-700">
               Customer Login
             </Link>
@@ -44,6 +54,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<CustomerLogin />} />
+          <Route path="/register" element={<CustomerRegister />} />
           <Route path="/dashboard" element={<CustomerDashboard />} />
           <Route path="/bikes" element={<AvailableBikes />} />
           <Route path="/bookings" element={<MyBookings />} />
