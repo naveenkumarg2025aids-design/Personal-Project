@@ -46,6 +46,7 @@ function CustomerRegister() {
       <label>Date of Birth</label>
       <input type="date" {...register('dateOfBirth')} className="w-full rounded border p-2" />
       {errors.dateOfBirth && <p className="text-red-500">{errors.dateOfBirth.message}</p>}
+      <label>hi</label>
     </div>
 
     <div>
