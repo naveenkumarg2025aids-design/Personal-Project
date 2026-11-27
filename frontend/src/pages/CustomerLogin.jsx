@@ -43,7 +43,7 @@ function CustomerLogin() {
             htmlFor="password"
             className="mb-1 block text-sm text-gray-800"
           >
-            Password
+            Password.
           </label>
           <input
             id="password"
