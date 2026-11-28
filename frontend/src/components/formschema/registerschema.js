@@ -9,7 +9,7 @@ export const registerSchema = z.object({
 
   dateOfBirth: z.string().min(1, 'Date of birth is required'),
 
-  licenseNumber: z.string().min(5, 'Enter a valid driving licence number'),
+  licenseNumber: z.string().min(5, 'Enter a valid driving licence number .....'),
 
   password: z.string().min(8, 'Password must be at least 8 characters'),
 
